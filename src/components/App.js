@@ -10,8 +10,8 @@ class App extends React.Component {
 		return (
 			<div>
 				<NavigationBar />
-                <SearchBar />
-                <MusicPlayer />
+				<SearchBar />
+				<MusicPlayer />
 			</div>
 		);
 	}

@@ -12,8 +12,8 @@ class SongList extends React.Component {
 				<Song />
 				<Song />
 				<Song />
-                <Song />
-                <Song />
+				<Song />
+				<Song />
 				<Song />
 			</div>
 		);
