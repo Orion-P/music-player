@@ -2,6 +2,9 @@ import React from "react";
 import "./Login.css";
 
 class Login extends React.Component {
+
+    state = {username: '', password: ''};
+
 	render() {
 		return (
 			<div className="login ui placeholder compact segment">
@@ -18,7 +21,7 @@ class Login extends React.Component {
 							<div className="field">
 								<label>Password</label>
 								<div className="ui left icon input">
-									<input type="password" placeholder="Password"/>
+									<input type="password" placeholder="Password" />
 									<i className="lock icon"></i>
 								</div>
 							</div>
