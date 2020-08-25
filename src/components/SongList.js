@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const SongList = props => {
+	const [currentSongSection, setSongSection] = useState([]);
+	console.log(props);
+	useEffect(() => {
+		props.updateSongs(renderedSongs);
+	}, [currentSongSection]);
 
-    const [currentSongSection, setSongSection] = useState([]);
-
-	console.log(props.songs);
 	const renderedSongs = props.songs.map(song => {
 		return (
 			<div key={song.id} className="item">
@@ -21,26 +23,35 @@ const SongList = props => {
 						{song.artist_name}
 					</p>
 				</div>
-				<img
-					height="50px"
-					width="50px"
-					src={song.album_image}
-					style={{ marginBottom: "8px" }}
-				></img>
-				<audio style={{ padding: `14px`, marginTop: `-10px` }} controls>
-					<source src={song.audio} type="audio/mp3" />
-				</audio>
+				<div style={{ paddingTop: '26px', marginBottom: "14px" }}>
+					<img
+						height="60px"
+						width="60px"
+						src={song.album_image}
+						style={{ marginBottom: "8px" }}
+					></img>
+					<audio style={{ padding: `20px`, marginTop: `10px` }} controls>
+						<source src={song.audio} type="audio/mp3" />
+					</audio>
+					<a
+						style={{ position: "relative", bottom: "42px" }}
+						href={song.audiodownload}
+						className="ui small basic icon buttons"
+					>
+						<button className="ui button">
+							<i className="download center blue icon big"></i>
+						</button>
+					</a>
+				</div>
 			</div>
 		);
 	});
 
 	return (
-		<div className="ui mini divided list">
-			{renderedSongs.length === 0 ? (
-				<h1 className="ui center aligned header">Search for a song</h1>
-			) : (
-				renderedSongs
-			)}
+		<div>
+			<div className="ui mini divided list">
+				{renderedSongs.length === 0 ? null : renderedSongs}
+			</div>
 		</div>
 	);
 };

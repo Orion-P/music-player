@@ -20,7 +20,7 @@ class App extends React.Component {
 					client_id: "2bc19d22",
 					format: "json",
 					search: term,
-					limit: 200
+					limit: 10
 				}
 			})
 			.then(({ data }) => {
@@ -29,12 +29,14 @@ class App extends React.Component {
 			.catch(err => console.log(err));
 	};
 
+	onPageSwitch() {}
+
 	render() {
 		return (
 			<div>
 				<NavigationBar />
-				<div className="ui center aligned segment">
-					<div className="ui menu secondary compact">
+				<div className="ui center aligned segment massive">
+					<div className="ui menu secondary compact massive">
 						<div className="item">
 							<button className="ui left labeled icon button teal">
 								<i className="left arrow icon"></i>
@@ -45,7 +47,10 @@ class App extends React.Component {
 							<SearchBar onFormSubmit={this.onFormSubmit} />
 						</div>
 						<div className="item">
-							<button className="ui right labeled icon button teal">
+							<button
+								onClick={e => console.log(e)}
+								className="ui right labeled icon button teal"
+							>
 								<i className="right arrow icon"></i>
 								Next
 							</button>
