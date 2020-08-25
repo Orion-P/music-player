@@ -8,6 +8,9 @@ const SongList = props => {
 	}, [currentSongSection]);
 
 	const renderedSongs = props.songs.map(song => {
+		const songNameFormatted =
+			song.name.substring(0, 1).toUpperCase() + song.name.substring(1);
+
 		return (
 			<div key={song.id} className="item">
 				<div
@@ -16,14 +19,15 @@ const SongList = props => {
 				>
 					<p className="ui left floated">
 						<strong>Song: </strong>
-						{song.name.toLowerCase()}
+
+						{songNameFormatted}
 					</p>
 					<p className="ui left floated">
 						<strong>Artist: </strong>
 						{song.artist_name}
 					</p>
 				</div>
-				<div style={{ paddingTop: '26px', marginBottom: "14px" }}>
+				<div style={{ paddingTop: "26px", marginBottom: "14px" }}>
 					<img
 						height="60px"
 						width="60px"
