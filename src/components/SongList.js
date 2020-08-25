@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 const SongList = props => {
+
+    const [currentSongSection, setSongSection] = useState([]);
+
 	console.log(props.songs);
 	const renderedSongs = props.songs.map(song => {
 		return (
@@ -12,8 +15,8 @@ const SongList = props => {
 					<p className="ui left floated">
 						<strong>Song: </strong>
 						{song.name.toLowerCase()}
-                    </p>
-                    <p className="ui left floated">
+					</p>
+					<p className="ui left floated">
 						<strong>Artist: </strong>
 						{song.artist_name}
 					</p>

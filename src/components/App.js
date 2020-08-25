@@ -19,8 +19,8 @@ class App extends React.Component {
 				params: {
 					client_id: "2bc19d22",
 					format: "json",
-                    search: term,
-                    limit: 200
+					search: term,
+					limit: 200
 				}
 			})
 			.then(({ data }) => {
@@ -33,7 +33,25 @@ class App extends React.Component {
 		return (
 			<div>
 				<NavigationBar />
-				<SearchBar onFormSubmit={this.onFormSubmit} />
+				<div className="ui center aligned segment">
+					<div className="ui menu secondary compact">
+						<div className="item">
+							<button className="ui left labeled icon button teal">
+								<i className="left arrow icon"></i>
+								Prev
+							</button>
+						</div>
+						<div className="item">
+							<SearchBar onFormSubmit={this.onFormSubmit} />
+						</div>
+						<div className="item">
+							<button className="ui right labeled icon button teal">
+								<i className="right arrow icon"></i>
+								Next
+							</button>
+						</div>
+					</div>
+				</div>
 				<MusicPlayer songs={this.state.songs} />
 			</div>
 		);
