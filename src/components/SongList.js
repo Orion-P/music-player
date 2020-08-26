@@ -21,13 +21,14 @@ const SongList = props => {
 						<strong>Song: </strong>
 
 						{songNameFormatted}
-					</p>
+                    </p>
+                    <br></br>
 					<p className="ui left floated">
 						<strong>Artist: </strong>
 						{song.artist_name}
 					</p>
 				</div>
-				<div style={{ paddingTop: "26px", marginBottom: "14px" }}>
+				<div style={{ paddingTop: "10px", marginBottom: "14px" }}>
 					<img
 						height="60px"
 						width="60px"
@@ -38,7 +39,7 @@ const SongList = props => {
 						<source src={song.audio} type="audio/mp3" />
 					</audio>
 					<a
-						style={{ position: "relative", bottom: "42px" }}
+						style={{ position: "relative", bottom: "41.5px" }}
 						href={song.audiodownload}
 						className="ui small basic icon buttons"
 					>
