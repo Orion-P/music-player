@@ -1,0 +1,23 @@
+.item {
+    margin: 0 auto !important;
+    padding: 0 auto !important;
+}
+
+img {
+    display: block;
+    border: 2px solid rgb(65, 63, 63);
+    margin-top: -13px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px !important;
+}
+
+.text {
+    font-size: 25px;
+    text-align: center;
+}
+
+.artist {
+    text-align: center;
+
+}

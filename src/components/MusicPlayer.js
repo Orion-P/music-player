@@ -1,6 +1,6 @@
 import React from "react";
 import SongList from "./SongList";
-// import ReactPlayer from "react-player";
+import "../css/MusicPlayer.css";
 
 class MusicPlayer extends React.Component {
 	constructor(props) {
@@ -9,24 +9,14 @@ class MusicPlayer extends React.Component {
 		return;
 	}
 
-	// componentDidUpdate() {
-	// }
-
-	updateSongs = songs => {
-        this.setState({ tenSongs: songs });
-        console.log(this.state.tenSongs);
-
+	updateSongs = (songs) => {
+		this.setState({ tenSongs: songs });
 	};
 
 	render() {
 		return (
-			<div className="ui container">
-				<div
-					style={{ paddingTop: `20px` }}
-					className="ui container right aligned"
-				>
-					<SongList updateSongs={this.updateSongs} songs={this.props.songs} />
-				</div>
+			<div className="ui container wrapper">
+				<SongList updateSongs={this.updateSongs} songs={this.props.songs} />
 			</div>
 		);
 	}
