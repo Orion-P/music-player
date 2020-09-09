@@ -2,36 +2,17 @@ import React from "react";
 import axios from "axios";
 
 import Nav from "./Nav";
-import HomePage from "./HomePage";
-import MusicPlayer from "./MusicPlayer";
+import Footer from "./Footer";
+import SearchResults from "./SearchResults";
 
 class App extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { songs: [], term: "sad" };
+		this.state = { songs: [], term: "" };
 		return;
-    }
-    
-    componentDidMount() {
-        {
-            axios
-                .get("https://api.jamendo.com/v3.0/tracks", {
-                    params: {
-                        client_id: "2bc19d22",
-                        format: "json",
-                        search: this.state.term,
-                        limit: 10,
-                    },
-                })
-                .then(({ data }) => {
-                    this.setState({ songs: data.results });
-                })
-                .catch((err) => console.log(err));
-        };
-    }
+	}
 
 	onFormSubmit = (term) => {
-		this.setState({ term: term });
 		axios
 			.get("https://api.jamendo.com/v3.0/tracks", {
 				params: {
@@ -51,7 +32,12 @@ class App extends React.Component {
 		return (
 			<div>
 				<Nav onFormSubmit={this.onFormSubmit} />
-				<HomePage term={this.state.term} songs={this.state.songs} />
+				<SearchResults
+					onSearch={this.onFormSubmit}
+					term={this.state.term}
+					songs={this.state.songs}
+				></SearchResults>
+				<Footer></Footer>
 			</div>
 		);
 	}

@@ -5,10 +5,7 @@ import "../css/Nav.css";
 
 class Nav extends React.Component {
 	onIClick = () => {
-		if (window.location.pathname === "/") {
-			return;
-		}
-		window.location.pathname = "/";
+		window.location.reload(false);
 	};
 
 	render() {

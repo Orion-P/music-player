@@ -1,0 +1,19 @@
+.footer {
+	background-color: black;
+	width: 100%;
+	margin-top: 40px;
+}
+
+.github-image {
+	height: 80px;
+	display: flex;
+	margin: 0 auto;
+	padding-top: 30px;
+}
+
+.github-text {
+	color: white;
+	text-align: center;
+	padding-top: 9px;
+	padding-bottom: 20px;
+}

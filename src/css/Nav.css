@@ -1,5 +1,5 @@
 i.home {
-	color: aliceblue;
+	color: rgb(180, 63, 200);
 	width: 100%;
 	padding-top: 19px;
 	padding-bottom: 20px;
@@ -8,7 +8,7 @@ i.home {
 }
 
 .grid-container {
-	background-color: #1a0000;
+	background-color: #fbd1d1;
 	display: grid;
 	grid-template-columns: 0.5fr 10fr;
 }
@@ -16,3 +16,4 @@ i.home {
 .search-bar {
 	width: 100%;
 }
+

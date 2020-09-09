@@ -17,7 +17,7 @@ class SearchBar extends React.Component {
 		return (
 			<form onSubmit={this.onFormSubmit} className="ui form">
 				<div className="field huge ui icon input">
-					<i className="search icon"></i>
+					<i className="search icon purple"></i>
 					<input
 						name="search"
 						type="text"

@@ -3,6 +3,10 @@
 	margin: 0;
 }
 
+input {
+	border-radius: 20px !important;
+}
+
 form {
 	width: 100%;
 	padding-top: 20px;

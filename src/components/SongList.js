@@ -3,7 +3,6 @@ import "../css/SongList.css";
 
 const SongList = (props) => {
 	const [currentSongSection, setSongSection] = useState([]);
-	console.log(props);
 	useEffect(() => {
 		props.updateSongs(renderedSongs);
 	}, [currentSongSection]);
@@ -14,37 +13,32 @@ const SongList = (props) => {
 
 		return (
 			<div key={song.id} className="item">
-				<div>
-					<p className="text">
-						<strong>
-							Song:<br></br>
-						</strong>
-						{songNameFormatted}
-					</p>
-					<img
-						height="150px"
-						width="150px"
-						src={song.album_image}
-						style={{ marginBottom: "8px" }}
-					></img>
-					<p className="text artist">
-						<strong>
-							Artist:<br></br>
-						</strong>
-						{song.artist_name}
-					</p>
-				</div>
-
-				<div>
-					<audio controls>
-						<source src={song.audio} type="audio/mp3" />
-					</audio>
-					<a href={song.audiodownload} className="ui small basic icon buttons">
-						<button className="ui button">
-							<i className="download center blue icon big"></i>
-						</button>
-					</a>
-				</div>
+				<p className="text">
+					<strong>
+						Song:<br></br>
+					</strong>
+					{songNameFormatted}
+				</p>
+				<img
+					height="150px"
+					width="150px"
+					src={song.album_image}
+					style={{ marginBottom: "8px" }}
+				></img>
+				<p className="text artist">
+					<strong>
+						Artist:<br></br>
+					</strong>
+					{song.artist_name}
+				</p>
+				<audio controls>
+					<source src={song.audio} type="audio/mp3" />
+				</audio>
+				<a href={song.audiodownload} className="ui small basic icon buttons">
+					<button className="ui button">
+						<i className="download center purple icon big"></i>
+					</button>
+				</a>
 			</div>
 		);
 	});
